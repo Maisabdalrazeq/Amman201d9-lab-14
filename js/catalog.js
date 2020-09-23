@@ -11,19 +11,34 @@ function populateForm() {
 
   //TODO: Add an <option> tag inside the form's select for each product
   var selectElement = document.getElementById('items');
-  for (var i in Product.allProducts) {
-
+  var optionElement;
+  for(var i=0; i < Product.allProducts.length; i++){
+    optionElement = document.createElement('option');
+    optionElement.textContent = Product.allProducts[i].name;
+    selectElement.appendChild(optionElement);
+    console.log(Product.allProducts[i].name);
   }
-
+  // for (var i in Product.allProducts) { 
+  // }
 }
+
+
+
+// Set up the "submit" event listener on the form.
+// This is the trigger for the app. When a user "submits" the form, it will
+// Call that handleSubmit method above and kick off the whole process
+var catalogForm = document.getElementById('catalog');
+catalogForm.addEventListener('submit', handleSubmit);
 
 // When someone submits the form, we need to add the selected item to the cart
 // object, save the whole thing back to local storage and update the screen
 // so that it shows the # of items in the cart and a quick preview of the cart itself.
+
+
 function handleSubmit(event) {
-
+  
   // TODO: Prevent the page from reloading
-
+  event.preventDefault();
   // Do all the things ...
   addSelectedItemToCart();
   cart.saveToLocalStorage();
@@ -48,12 +63,9 @@ function updateCartPreview() {
   // TODO: Add a new element to the cartContents div with that information
 }
 
-// Set up the "submit" event listener on the form.
-// This is the trigger for the app. When a user "submits" the form, it will
-// Call that handleSubmit method above and kick off the whole process
-var catalogForm = document.getElementById('catalog');
-catalogForm.addEventListener('submit', handleSubmit);
 
+
+ 
 // Before anything else of value can happen, we need to fill in the select
 // drop down list in the form.
 populateForm();
