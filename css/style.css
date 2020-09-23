@@ -1,1 +1,43 @@
 /* TODO: Make it awesome */
+header,main{
+    margin-bottom: 20px;
+}
+header h1{
+    background-color: slategray;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    padding: 10px;
+}
+header nav{
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    font-size: larger;
+}
+header nav ul{
+}
+header nav ul li{
+    display: inline-block;
+    padding: 0px 10px;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+section{
+    margin: 0px 40px;
+}
+form{
+    border: black solid 2px;
+    margin: 10px 0px;
+}
+
+
+footer{
+    background-color: slategray;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    padding: 10px;
+}
