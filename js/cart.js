@@ -11,6 +11,7 @@ function loadCart() {
   cart = new Cart(cartItems);
 }
 
+//comment by mais 
 // Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
 function renderCart() {
   loadCart();
